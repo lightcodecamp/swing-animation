@@ -1,0 +1,67 @@
+:root {
+  --color-primary: #00b3f2;
+  --color-primary-dark: #005472;
+  --color-primary-dark-2: #004159;
+
+  --color-white: #eeeded;
+  --color-black: #0f0f0f;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+
+  padding-left: 100px;
+
+  background-image: linear-gradient(rgba(0,0,0, .7), rgba(0,0,0, .7)),
+  url(./bg.jpg);
+  background-position: center;
+  /* background-size: cover; */
+  overflow: hidden;
+}
+
+.card {
+    width: 250px;
+    height: 100px;
+    color: #fff;
+    background-color: crimson;
+
+    display: flex;
+    justify-content: center;
+
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    
+    top: -100px;
+    transform-origin: 10px 10px;
+    animation: drop .5s ease forwards,
+               swing 2s 3s linear forwards;
+}
+
+
+h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+}
+
+@keyframes drop {
+    0%{opacity: 0;}
+    70%{transform: translateY(400px);}
+    100%{transform: translateY(350px); opacity: 1;}
+}
+
+@keyframes swing {
+    0%{transform: translateY(350px) rotateZ(0deg);}
+    40%{transform: translateY(350px) rotateZ(90deg);}
+    70%{transform: translateY(350px) rotateZ(70deg);}
+    100%{transform: translateY(350px) rotateZ(75deg);}
+}
